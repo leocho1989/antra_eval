@@ -22,6 +22,11 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 20px;
+  
+}
+
+.album {
+    margin-top: -20px;
 }
 
 .single_album {
@@ -69,6 +74,8 @@ top: 0;
 width: 100%;
  overflow: hidden;
  text-align: center;
+ background-color: #2fc88b;
+height: 70px;
 }
 
 #search_btn {
