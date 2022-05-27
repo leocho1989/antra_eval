@@ -54,9 +54,10 @@ h1 {
 }
 
 #search_input {
-    width: 95%;
+    
+    width: 30%;
     height: 32px;
-    border-radius: 3px;
+    border-radius: 10px;
     border: 1px solid #cccbcb;
     padding: 5px 10px;
     font-size: 12px;
@@ -67,6 +68,7 @@ h1 {
 top: 0;
 width: 100%;
  overflow: hidden;
+ text-align: center;
 }
 
 #search_btn {
