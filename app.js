@@ -8,6 +8,8 @@
 
       const searchResult = document.getElementById('search_result');
 
+      const loader = document.getElementById('loader');
+
       let albums = [];
       
       
@@ -18,7 +20,9 @@
           'keypress',
           (e) => {
             if (e.keyCode === 13) {
+              
                 searchBtn();
+                
             }
           }
         );
@@ -27,7 +31,7 @@
     
           searchBtn.addEventListener(
             'click', ()=> {
-
+            loader.style.visibility = 'visible';
             let artistName = searchInput.value;
            
             console.log(artistName);
@@ -40,10 +44,9 @@
 fetchJsonp(`https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=200`)
     .then((response) => response.json())
     .then((items) => {
-
+loader.style.visibility = 'hidden';
        albums = items.results;
 
-        console.log(albums);
          searchResult.innerHTML = `<h1>${albums.length} albums found`;
        const htmlString = albums.map((album) =>{return `
             
@@ -56,9 +59,13 @@ fetchJsonp(`https://itunes.apple.com/search?term=${artistName}&media=music&entit
             `;}).join('');
 
             albumContent.innerHTML = htmlString;
+
+
     });
 
-});
+}
+
+);
 
  
        }
