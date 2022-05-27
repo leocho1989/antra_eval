@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;
+    background-color: #2fc88b;
+}
+
+* {
+    box-sizing: border-box;
+}
+h1 {
+    color: #eee;
+    margin-bottom: 30px;
+}
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#album_content {
+       padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+.single_album {
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name image'
+        'country image';
+    text-align: left;
+}
+
+.single_album > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+
+.single_album > p {
+    grid-area: house;
+    margin: 0;
+    margin-top: -18px;
+}
+
+.single_album > img {
+    max-height: 100px;
+    grid-area: image;
+}
+
+#search_input {
+    width: 95%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #cccbcb;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#album_search {
+    position: fixed;
+top: 0;
+width: 100%;
+ overflow: hidden;
+}
+
+#search_btn {
+    height: 32px;
+    border: none;
+    background-color: transparent;
+}
+
