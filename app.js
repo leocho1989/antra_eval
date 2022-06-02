@@ -21,7 +21,8 @@
           (e) => {
             if (e.keyCode === 13) {
               
-                searchBtn();
+                searchBtn.click();
+                
                 
             }
           }
@@ -35,6 +36,7 @@
             let artistName = searchInput.value;
            
             console.log(artistName);
+
             if (artistName.length < 1) {
             alert("Please enter an artist name");
              return;
@@ -46,16 +48,23 @@ fetchJsonp(`https://itunes.apple.com/search?term=${artistName}&media=music&entit
     .then((items) => {
 loader.style.visibility = 'hidden';
        albums = items.results;
-
-         searchResult.innerHTML = `<h1>${albums.length} albums found`;
+      console.log(albums);
+         searchResult.innerHTML = `<h1>${albums.length} albums found by ${artistName}`;
        const htmlString = albums.map((album) =>{return `
             
             <li class = "single_album">
             <h2>${album.collectionName}</h2>
+
+            <p>${album.collectionPrice}</p>
            
             <img src="${album.artworkUrl100}">
+
+         
+
             
             </li>
+
+         
             `;}).join('');
 
             albumContent.innerHTML = htmlString;

@@ -38,17 +38,18 @@ h1 {
     grid-template-columns: 3fr 1fr;
     grid-template-areas:
         'name image'
-        'country image';
+        'price image';
     text-align: left;
 }
 
 .single_album > h2 {
     grid-area: name;
     margin-bottom: 0px;
+    font-size: 17px;
 }
 
 .single_album > p {
-    grid-area: house;
+    grid-area: price;
     margin: 0;
     margin-top: -18px;
 }
@@ -99,3 +100,5 @@ height: 70px;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }      
+
+
